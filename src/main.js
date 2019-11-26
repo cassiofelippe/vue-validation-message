@@ -1,8 +1,5 @@
-import Vue from 'vue'
-import App from './App.vue'
+import ValidationMessage from './components/validation-message.vue'
 
-Vue.config.productionTip = false
+export { cpfValidator, cnpjValidator } from './components/validation-message.vue'
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+export default ValidationMessage
