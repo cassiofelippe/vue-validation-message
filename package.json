@@ -5,10 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "build-lib": "vue-cli-service build --target lib --name vue-validation-message src/main.js"
+    "lint": "vue-cli-service lint"
   },
-  "main": "./dist/vue-validation-message.common.js",
+  "main": "src/main.js",
   "dependencies": {
     "core-js": "^3.3.2",
     "vue": "^2.6.10"
