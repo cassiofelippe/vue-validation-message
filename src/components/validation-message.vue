@@ -12,48 +12,21 @@
   export default {
     name: 'validation-message',
     
-    props: ['property'],
+    props: ['property', 'message'],
 
     data() {
       return {
         validations: [],
         messages(validation) {
-          let required = 'Deve ser preenchido',
-          formatoCorreto = 'Deve ser preenchido no formato correto',
-          email = 'Deve ser um email válido',
-          minLength = `Deve ter no mínimo ${validation.min} caracteres`,
-          maxLength = `Deve ser menor ou igual a ${validation.max}`,
-          minValue = `Deve ser maior ou igual a ${validation.min}`,
-          selecionado = 'Deve ser selecionado';
-
           // objeto que contém as mensagens de validação
-          // caso não esteja especificado, retorna mensagem padrao required
+          // caso não esteja especificado, retorna mensagem parametrizada ou padrão required
           return {
-            required: required,
-            minLength: minLength,
-            maxLength: maxLength,
-            email: email,
-            emailValidator: email,
-            cpfValidator: formatoCorreto,
-            sexoValidator: 'Deve ser MASCULINO ou FEMININO',
-            minValue: minValue,
-            cnpjValidator: formatoCorreto,
-            estadoCivilValidator: selecionado,
-            regimeCasamentoValidator: selecionado,
-            cpfConjugeValidator: formatoCorreto,
-            cnpjProcuradorValidator: formatoCorreto,
-            cpfResponsavelLegalValidator: formatoCorreto,
-            documentosBemImovelValidator: selecionado,
-            documentosBemMovelValidator: selecionado,
-            estrangeiroValidator: 'Este fluxo não contempla cadastros de estrangeiros',
-            menorIdadeValidator: 'Este fluxo não contempla cadastros de menores de idade',
-            telefoneValidator: formatoCorreto,
-            telefoneAdicionalValidator: formatoCorreto,
-            notMatchValidator: 'Não podem haver telefones iguais nessa aba',
-            notMatchEmailsValidator: 'Emails devem ser diferentes um do outro',
-            notMatchRefNamesValidator: 'Nomes das referências devem ser diferentes um do outro',
-            minLengthInformacoesComerciaisValidator: 'Deve ter no mínimo 10 caracteres'
-          }[validation.key] || required;
+            required: 'Deve ser preenchido',
+            minLength: `Deve ter no mínimo ${validation.min} caracteres`,
+            maxLength: `Deve ser menor ou igual a ${validation.max}`,
+            email: 'Deve ser um email válido',
+            minValue: `Deve ser maior ou igual a ${validation.min}`,
+          }[validation.key] || this.message || 'Deve ser preenchido';
         }
       }
     },
