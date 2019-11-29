@@ -1,5 +1,5 @@
 {
-  "name": "vue-validation-message",
+  "name": "@cassiofelippe/vue-validation-message",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -43,5 +43,16 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "## Como usar 1) No componente desejado, importar a lib ```js import validation from 'vue-validation-message' ```",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CassioFelippe/vue-validation-message.git"
+  },
+  "author": "Cassio Luis Felippe <cassioluis12@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CassioFelippe/vue-validation-message/issues"
+  },
+  "homepage": "https://github.com/CassioFelippe/vue-validation-message#readme"
 }
