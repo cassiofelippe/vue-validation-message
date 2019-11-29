@@ -1,5 +1,5 @@
 {
-  "name": "@cassiofelippe/vue-validation-message",
+  "name": "vue-validation-message",
   "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve",
