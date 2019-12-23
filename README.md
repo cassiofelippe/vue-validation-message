@@ -15,7 +15,7 @@ components: {
 
 3) Show the validation message  
 ```html
-<validation :property="$v.model.cpf" message="Must be filled in the correct format" v-multi-ref:validation />
+<validation :property="$v.model.name" message="Must be filled in the correct format" v-multi-ref:validation />
 ```
 
 Being:  
@@ -39,7 +39,7 @@ validations: {
 ```
 You can pass the message parameter as an object with the properties and messages:  
 ```html
-<validation :property="$v.model.cpf" :message="{required: 'Please fill out this field', validFormat: 'Must be filled in the correct format'}" v-multi-ref:validation />
+<validation :property="$v.model.name" :message="{required: 'Please fill out this field', validFormat: 'Must be filled in the correct format'}" v-multi-ref:validation />
 ```
 ##  
 
