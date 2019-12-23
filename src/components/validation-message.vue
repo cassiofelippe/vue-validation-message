@@ -10,7 +10,7 @@
 
 <script>
   const parseMessage = function(message, key) {
-    if (typeof message === 'string') {
+    if (!message || typeof message === 'string') {
       return message;
     } else {
       return message[key];
