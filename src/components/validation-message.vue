@@ -9,6 +9,14 @@
 </template>
 
 <script>
+  const parseMessage = function(message, key) {
+    if (typeof message === 'string') {
+      return message;
+    } else {
+      return message[key];
+    }
+  };
+
   export default {
     name: 'validation-message',
     
@@ -26,7 +34,7 @@
             maxLength: `Deve ser menor ou igual a ${validation.max}`,
             email: 'Deve ser um email válido',
             minValue: `Deve ser maior ou igual a ${validation.min}`,
-          }[validation.key] || this.message || 'Deve ser preenchido';
+          }[validation.key] || parseMessage(this.message, validation.key) || 'Deve ser preenchido';
         }
       }
     },
