@@ -1,26 +1,47 @@
 # vue-validation-message
 
-## Como usar
-1) No componente desejado, importar a lib
+## How to use
+1) In the desired component, import the lib  
 ```js
 import validation from 'vue-validation-message'
 ```
 
-2) Adicionar na lista de componentes
+2) Add to the component's list  
 ```js
 components: {
   validation
 }
 ```
 
-3) Chamar o componente
+3) Show the validation message  
 ```html
-<validation :property="$v.model.cpf" message="Deve ser preenchido no formato correto" v-multi-ref:validation />
+<validation :property="$v.model.cpf" message="Must be filled in the correct format" v-multi-ref:validation />
 ```
-```property``` a propriedate do validador (vuelidate)  
-```message``` a mensagem da validação  
-```v-multi-ref:validation``` a referência (v-multi-ref), um trigger para ativar a mensagem
 
+Being:  
+```property``` the vuelidate property  
+```message``` the validation message    
+```v-multi-ref:validation``` the reference (v-multi-ref), a trigger to activate de message
+
+## Advanced usage
+If you have multiple validations to a single property, e.g:  
+```js
+validations: {  
+  model: {  
+    name: {  
+      required,  
+      validFormat: function() {  
+        return x === y  
+      }  
+    }  
+  }  
+}  
+```
+You can pass the message parameter as an object with the properties and messages:  
+```html
+<validation :property="$v.model.cpf" :message="{required: 'Please fill out this field', validFormat: 'Must be filled in the correct format'}" v-multi-ref:validation />
+```
+##  
 
 ## Project setup
 ```
